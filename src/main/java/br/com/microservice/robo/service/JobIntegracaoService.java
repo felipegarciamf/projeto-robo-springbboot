@@ -7,17 +7,17 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
-import br.com.microservice.robo.service.transacional.EnviaLogTransacionalParaKafkaService;
+import br.com.microservice.robo.service.transacional.EnvioLogTransacionalParaKafkaService;
 import br.com.microservice.robo.service.transacional.ILogTransacionalService;
 
 @Component
 public class JobIntegracaoService implements IJobIntegracaoService {
 
 	@Autowired
-	EnviaLogTransacionalParaKafkaService logTransacionalService;
+	EnvioLogTransacionalParaKafkaService logTransacionalService;
 
 	@Autowired
-	CadastraLogTransacionalService cadastraLogTransacionalService;
+	CadastroLogTransacionalService cadastraLogTransacionalService;
 
 	@Scheduled(cron = "* * * ? * *")
 	public void executaJob() {

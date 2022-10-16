@@ -10,7 +10,7 @@ import br.com.microservice.robo.dto.LogTransacionalDto;
 import br.com.microservice.robo.form.LogTransacionalForm;
 
 @Service
-public class EnviaLogTransacionalParaAPIService implements ILogTransacionalService {
+public class EnvioLogTransacionalParaAPIService implements ILogTransacionalService {
 
 	// Envio via api
 	@Autowired

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.microservice.robo.dto.LogTransacionalDto;
 
 @Service
-public class EnviaLogTransacionalParaKafkaService implements ILogTransacionalService {
+public class EnvioLogTransacionalParaKafkaService implements ILogTransacionalService {
 
 	private static final String TOPIC = "logTransacionalExample";
 

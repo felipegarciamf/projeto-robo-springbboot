@@ -12,7 +12,7 @@ import br.com.microservice.robo.repository.LogTransacionalRepository;
 
 
 @Service
-public class CadastraLogTransacionalService {
+public class CadastroLogTransacionalService {
 
 	private Long valor = 0L;
 
