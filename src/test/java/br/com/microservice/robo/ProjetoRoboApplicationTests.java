@@ -1,4 +1,4 @@
-package br.com.alura.microservice.auth;
+package br.com.microservice.robo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
