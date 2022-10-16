@@ -15,7 +15,7 @@ import com.fasterxml.jackson.databind.ser.std.StringSerializer;
 import br.com.microservice.robo.dto.LogTransacionalDto;
 
 @Configuration
-public class LogTransacionalConfig {
+public class LogTransacionalKafkaProducerConfig {
 
 	@Bean
 	public ProducerFactory<String, LogTransacionalDto> producerFactory() {

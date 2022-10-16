@@ -1,12 +1,14 @@
 package br.com.microservice.robo.service.logtransacional;
 
+import java.util.List;
+
+import br.com.microservice.robo.dto.LogTransacionalDto;
+
 public interface ILogTransacionalService {
 
 	
-	public LogTransacionalService enviaLogsParaOKafkaProducer();
+	public void enviaLogs(List<LogTransacionalDto> log);
 	
-	public LogTransacionalService cadastraLogsViaAPI();
 	
-	public LogTransacionalService cadastraLogTransacional();
 	
 }

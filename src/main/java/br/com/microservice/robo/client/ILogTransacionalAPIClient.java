@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import br.com.microservice.robo.form.LogTransacionalForm;
 
 @FeignClient(value= "teste",url = "http://teste/")
-public interface ILogTransacionalAWSClient {
+public interface ILogTransacionalAPIClient {
 	
 	
 	@PostMapping("/log_transacoes")
