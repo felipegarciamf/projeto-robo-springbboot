@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import br.com.microservice.robo.client.ILogTransacionalAWSClient;
 import br.com.microservice.robo.dto.LogTransacionalDto;
 import br.com.microservice.robo.form.LogTransacionalForm;
 import br.com.microservice.robo.model.LogTransacional;
@@ -14,6 +15,8 @@ import br.com.microservice.robo.repository.LogTransacionalRepository;
 @Component
 public class JobIntegracao implements IJobIntegracao {
 
+	@Autowired
+	private ILogTransacionalAWSClient logTransacionalAWSClient;
 	
 	@Autowired
 	private LogTransacionalRepository logTransacionalRepository;
@@ -44,7 +47,8 @@ public class JobIntegracao implements IJobIntegracao {
 			System.out.println("<<<<<<<<<<<< PROXIMO >>>>>>>>>>>>>>");
 		}
 		
-		
+	
+		logTransacionalAWSClient.cadastroLog(logTransacionalForm);
 		System.out.println("entrou no job");
 		
 	}
