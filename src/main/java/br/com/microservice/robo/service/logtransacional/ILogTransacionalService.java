@@ -1,4 +1,4 @@
-package br.com.microservice.robo.service;
+package br.com.microservice.robo.service.logtransacional;
 
 public interface ILogTransacionalService {
 
