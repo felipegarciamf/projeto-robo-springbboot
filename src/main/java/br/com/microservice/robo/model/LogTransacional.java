@@ -1,4 +1,4 @@
-package br.com.alura.microservice.auth.model;
+package br.com.microservice.robo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -8,7 +8,7 @@
 		<version>2.7.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.alura.microservice.auth</groupId>
+	<groupId>br.com.microservice.robo</groupId>
 	<artifactId>projeto-robo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>projeto-robo</name>

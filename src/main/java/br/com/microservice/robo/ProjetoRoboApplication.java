@@ -1,4 +1,4 @@
-package br.com.alura.microservice.auth;
+package br.com.microservice.robo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package br.com.alura.microservice.auth.dto;
+package br.com.microservice.robo.dto;
 
 public class LogTransacionalDto {
 

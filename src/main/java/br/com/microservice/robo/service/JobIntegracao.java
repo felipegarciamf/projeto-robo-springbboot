@@ -1,4 +1,4 @@
-package br.com.alura.microservice.auth.service;
+package br.com.microservice.robo.service;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import br.com.alura.microservice.auth.dto.LogTransacionalDto;
-import br.com.alura.microservice.auth.form.LogTransacionalForm;
-import br.com.alura.microservice.auth.model.LogTransacional;
-import br.com.alura.microservice.auth.repository.LogTransacionalRepository;
+import br.com.microservice.robo.dto.LogTransacionalDto;
+import br.com.microservice.robo.form.LogTransacionalForm;
+import br.com.microservice.robo.model.LogTransacional;
+import br.com.microservice.robo.repository.LogTransacionalRepository;
 
 @Component
 public class JobIntegracao {

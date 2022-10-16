@@ -1,6 +1,6 @@
-package br.com.alura.microservice.auth.form;
+package br.com.microservice.robo.form;
 
-import br.com.alura.microservice.auth.model.LogTransacional;
+import br.com.microservice.robo.model.LogTransacional;
 
 public class LogTransacionalForm {
 
