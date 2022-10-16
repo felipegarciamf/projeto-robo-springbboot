@@ -1,4 +1,4 @@
-package br.com.microservice.robo.service;
+package br.com.microservice.robo.service.transacional;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ public class CadastroLogTransacionalService {
 
 	}
 
-	public List<LogTransacionalDto> recuperaLogTransacional() {
+	private List<LogTransacionalDto> recuperaLogTransacional() {
 		List<LogTransacional> all = logTransacionalRepository.findAll();
 
 		List<LogTransacionalDto> listaLogs = LogTransacionalDto.converter(all);

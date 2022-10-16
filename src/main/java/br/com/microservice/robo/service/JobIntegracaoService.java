@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
+import br.com.microservice.robo.service.transacional.CadastroLogTransacionalService;
 import br.com.microservice.robo.service.transacional.EnvioLogTransacionalParaKafkaService;
 import br.com.microservice.robo.service.transacional.ILogTransacionalService;
 

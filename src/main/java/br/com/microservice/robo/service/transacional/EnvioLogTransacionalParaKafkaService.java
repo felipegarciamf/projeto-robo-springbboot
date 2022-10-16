@@ -16,7 +16,7 @@ public class EnvioLogTransacionalParaKafkaService implements ILogTransacionalSer
 	@Autowired
 	private KafkaTemplate<String, LogTransacionalDto> kafkaTemplate;
 
-
+	
 	@Override
 	public void enviaLogs(List<LogTransacionalDto> log) {
 		log.stream().forEach(e -> kafkaTemplate.send(TOPIC, e));
