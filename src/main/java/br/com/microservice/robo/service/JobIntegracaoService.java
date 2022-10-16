@@ -17,10 +17,7 @@ public class JobIntegracaoService implements IJobIntegracaoService {
 	@Scheduled(cron = "* * * ? * *")
 	public void executaJob() {
 		
-		
-		
 		logTransacionalService.cadastraLogTransacional();
-		
 		System.out.println("entrou no job");
 		
 	}

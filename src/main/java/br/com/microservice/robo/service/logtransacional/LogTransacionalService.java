@@ -43,35 +43,14 @@ public class LogTransacionalService implements ILogTransacionalService {
 		LogTransacional logTransacional = logTransacionalForm.converter();
 		logTransacionalRepository.save(logTransacional);
 
-		List<LogTransacional> all = logTransacionalRepository.findAll();
-
-		List<LogTransacionalDto> listaLogs = LogTransacionalDto.converter(all);
-
-		for (LogTransacionalDto logTransacional3 : listaLogs) {
-			System.out.println(logTransacional3.getId());
-			System.out.println(logTransacional3.getNome());
-			System.out.println(logTransacional3.getTransacao());
-			System.out.println("<<<<<<<<<<<< PROXIMO >>>>>>>>>>>>>>");
-		}
-
+		recuperaLogTransacional();
+		
 		return this;
 	}
 
 	public LogTransacionalService envioDeLogsParaKafkaProducer() {
-		List<LogTransacional> all = logTransacionalRepository.findAll();
-
-		List<LogTransacionalDto> listaLogs = LogTransacionalDto.converter(all);
-
-		for (LogTransacionalDto logTransacional3 : listaLogs) {
-			System.out.println(logTransacional3.getId());
-			System.out.println(logTransacional3.getNome());
-			System.out.println(logTransacional3.getTransacao());
-
-			// envio de lista para o topico kafka
-			kafkaTemplate.send(TOPIC, logTransacional3);
-			System.out.println("Published successfully");
-			System.out.println("<<<<<<<<<<<< PROXIMO >>>>>>>>>>>>>>");
-		}
+		List<LogTransacionalDto> recuperaLogTransacional = recuperaLogTransacional();		
+		recuperaLogTransacional.stream().forEach(log -> kafkaTemplate.send(TOPIC, log));
 		return this;
 	}
 
@@ -80,4 +59,19 @@ public class LogTransacionalService implements ILogTransacionalService {
 		return this;
 	}
 
+	private List<LogTransacionalDto> recuperaLogTransacional() {
+		List<LogTransacional> all = logTransacionalRepository.findAll();
+
+		List<LogTransacionalDto> listaLogs = LogTransacionalDto.converter(all);
+
+		for (LogTransacionalDto logTransacional3 : listaLogs) {
+			System.out.println(logTransacional3.getId());
+			System.out.println(logTransacional3.getNome());
+			System.out.println(logTransacional3.getTransacao());
+			System.out.println("Published successfully");
+			System.out.println("<<<<<<<<<<<< PROXIMO >>>>>>>>>>>>>>");
+		}
+
+		return listaLogs;
+	}
 }
