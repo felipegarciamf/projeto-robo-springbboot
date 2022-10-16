@@ -48,7 +48,7 @@ public class LogTransacionalService implements ILogTransacionalService {
 		return this;
 	}
 
-	public LogTransacionalService envioDeLogsParaKafkaProducer() {
+	public LogTransacionalService enviaLogsParaOKafkaProducer() {
 		List<LogTransacionalDto> recuperaLogTransacional = recuperaLogTransacional();		
 		recuperaLogTransacional.stream().forEach(log -> kafkaTemplate.send(TOPIC, log));
 		return this;
