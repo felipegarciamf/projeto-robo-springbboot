@@ -12,15 +12,11 @@ import br.com.microservice.robo.model.LogTransacional;
 import br.com.microservice.robo.repository.LogTransacionalRepository;
 
 @Component
-public class JobIntegracao {
+public class JobIntegracao implements IJobIntegracao {
 
 	
 	@Autowired
 	private LogTransacionalRepository logTransacionalRepository;
-	
-	private static final int task_hour = 1 * 60 * 1000;
-	
-	private static final int task_init = 20 * 1000;
 	
 	private Long valor = 0L;
 	
