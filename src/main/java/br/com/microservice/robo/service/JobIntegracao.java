@@ -39,7 +39,9 @@ public class JobIntegracao {
 		
 		List<LogTransacional> all = logTransacionalRepository.findAll();
 		
-		for (LogTransacional logTransacional3 : all) {
+		 List<LogTransacionalDto> listaLogs = LogTransacionalDto.converter(all);
+		
+		for (LogTransacionalDto logTransacional3 : listaLogs) {
 			System.out.println(logTransacional3.getId());
 			System.out.println(logTransacional3.getNome());
 			System.out.println(logTransacional3.getTransacao());
