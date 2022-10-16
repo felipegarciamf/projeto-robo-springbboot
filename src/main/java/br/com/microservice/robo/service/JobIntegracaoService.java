@@ -7,8 +7,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
-import br.com.microservice.robo.service.logtransacional.EnviaLogTransacionalParaKafkaService;
-import br.com.microservice.robo.service.logtransacional.ILogTransacionalService;
+import br.com.microservice.robo.service.transacional.EnviaLogTransacionalParaKafkaService;
+import br.com.microservice.robo.service.transacional.ILogTransacionalService;
 
 @Component
 public class JobIntegracaoService implements IJobIntegracaoService {

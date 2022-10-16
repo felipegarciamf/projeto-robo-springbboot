@@ -1,4 +1,4 @@
-package br.com.microservice.robo.service.logtransacional;
+package br.com.microservice.robo.service.transacional;
 
 import java.util.List;
 
