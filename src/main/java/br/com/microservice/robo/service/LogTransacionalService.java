@@ -42,7 +42,7 @@ public class LogTransacionalService implements ILogTransacionalService {
 		logTransacionalForm.setTransacao("Loco" + valor);
 		LogTransacional logTransacional = logTransacionalForm.converter();
 		logTransacionalRepository.save(logTransacional);
-		
+
 		List<LogTransacional> all = logTransacionalRepository.findAll();
 
 		List<LogTransacionalDto> listaLogs = LogTransacionalDto.converter(all);
@@ -53,8 +53,7 @@ public class LogTransacionalService implements ILogTransacionalService {
 			System.out.println(logTransacional3.getTransacao());
 			System.out.println("<<<<<<<<<<<< PROXIMO >>>>>>>>>>>>>>");
 		}
-		
-		
+
 		return this;
 	}
 
@@ -70,10 +69,9 @@ public class LogTransacionalService implements ILogTransacionalService {
 
 			// envio de lista para o topico kafka
 			kafkaTemplate.send(TOPIC, logTransacional3);
-
+			System.out.println("Published successfully");
 			System.out.println("<<<<<<<<<<<< PROXIMO >>>>>>>>>>>>>>");
 		}
-
 		return this;
 	}
 
