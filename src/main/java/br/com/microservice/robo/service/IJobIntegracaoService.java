@@ -1,6 +1,6 @@
 package br.com.microservice.robo.service;
 
-public interface IJobIntegracao {
+public interface IJobIntegracaoService {
 
 	public void executaJob();	
 	
