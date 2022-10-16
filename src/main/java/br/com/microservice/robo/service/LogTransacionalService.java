@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import br.com.microservice.robo.client.ILogTransacionalAWSClient;
@@ -14,7 +13,7 @@ import br.com.microservice.robo.model.LogTransacional;
 import br.com.microservice.robo.repository.LogTransacionalRepository;
 
 @Service
-public class LogTransacionalService {
+public class LogTransacionalService implements ILogTransacionalService {
 
 	private static final String TOPIC = "logTransacionalExample";
 
