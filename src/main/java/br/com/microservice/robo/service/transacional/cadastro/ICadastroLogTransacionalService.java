@@ -1,4 +1,4 @@
-package br.com.microservice.robo.service.transacional;
+package br.com.microservice.robo.service.transacional.cadastro;
 
 import java.util.List;
 
