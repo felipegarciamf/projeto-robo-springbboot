@@ -3,16 +3,18 @@ package br.com.microservice.robo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
 import br.com.microservice.robo.service.transacional.cadastro.CadastroLogTransacionalService;
 import br.com.microservice.robo.service.transacional.envio.EnvioLogTransacionalParaKafkaService;
-import br.com.microservice.robo.service.transacional.envio.ILogTransacionalService;
 
 @Component
 public class JobIntegracaoService implements IJobIntegracaoService {
+	
+	
 
 	@Autowired
 	EnvioLogTransacionalParaKafkaService logTransacionalService;
