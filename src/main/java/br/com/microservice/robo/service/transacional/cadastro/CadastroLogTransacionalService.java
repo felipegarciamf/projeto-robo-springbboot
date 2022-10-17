@@ -12,7 +12,7 @@ import br.com.microservice.robo.repository.LogTransacionalRepository;
 
 
 @Service
-public class CadastroLogTransacionalService {
+public class CadastroLogTransacionalService implements ICadastroLogTransacionalService {
 
 	private Long valor = 0L;
 
