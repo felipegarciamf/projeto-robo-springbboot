@@ -5,15 +5,19 @@ import java.util.Properties;
 
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.springframework.stereotype.Service;
 
-public class RecebimentoLogTransacionalParaKafkaService {
 
-	private final static String TOPIC = "";
+@Service
+public class RecebimentoLogTransacionalParaKafkaService implements IRecebimentoLogTransacionalParaKafkaService {
 
-	private final static String BOOTSTRAP_SERVERS = "";
+	private final static String TOPIC = "logTransacionalExample";
+
+	private final static String BOOTSTRAP_SERVERS = "127.0.0.1:9092";
 
 	public Consumer<Long, String> criaConsumidor() {
 
@@ -27,7 +31,31 @@ public class RecebimentoLogTransacionalParaKafkaService {
 
 		consumer.subscribe(Collections.singletonList(TOPIC));
 		return consumer;
-
 	}
+
+	@Override
+	public void listaConsumidor() {
+		
+		final int indexmax = 100;   
+		int index = 0;
+		
+		Consumer<Long, String> consumidor = criaConsumidor();
+		
+		while(true) {
+			final ConsumerRecords<Long, String> gravacaoConsumidor =
+					consumidor.poll(1000);
+			
+			if(gravacaoConsumidor.count()==0) {
+				index++;
+				if(index > indexmax) break;
+				else continue;
+			}
+			
+		}
+		
+		
+	}
+	
+	
 
 }

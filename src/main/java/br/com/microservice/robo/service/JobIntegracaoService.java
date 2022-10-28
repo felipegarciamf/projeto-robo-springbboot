@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
 import br.com.microservice.robo.service.transacional.cadastro.CadastroLogTransacionalService;
-import br.com.microservice.robo.service.transacional.envio.EnvioLogTransacionalParaKafkaService;
+import br.com.microservice.robo.service.transacional.kafka.producer.EnvioLogTransacionalParaKafkaService;
 
 @Component
 public class JobIntegracaoService implements IJobIntegracaoService {
