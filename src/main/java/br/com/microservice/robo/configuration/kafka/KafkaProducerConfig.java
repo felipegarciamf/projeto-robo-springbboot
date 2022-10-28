@@ -25,10 +25,9 @@ import br.com.microservice.robo.dto.LogTransacionalDto;
 
 @EnableKafka
 @Configuration
-public class KafkaConfig {
+public class KafkaProducerConfig {
 
-	@Autowired
-	KafkaProperties properties;
+
 
 	@Bean
 	public ProducerFactory<String, LogTransacionalDto> producerFactory() {
@@ -48,25 +47,6 @@ public class KafkaConfig {
 		return new KafkaTemplate<>(producerFactory());
 	}
 
-	@Bean
-	public ConsumerFactory<String, String> consumerFactory() {
-		return new DefaultKafkaConsumerFactory<>(properties.buildConsumerProperties());
-	}
-
-	@Bean
-	public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> kafkaListenerContainerFactory() {
-
-		ConcurrentKafkaListenerContainerFactory<String, String> listener = new ConcurrentKafkaListenerContainerFactory<>();
-
-		listener.setConsumerFactory(consumerFactory());
-
-		listener.getContainerProperties().setMissingTopicsFatal(false);
-
-		listener.getContainerProperties().setAckMode(AckMode.MANUAL);
-
-		listener.getContainerProperties().setSyncCommits(Boolean.TRUE);
-
-		return listener;
-	}
+	
 
 }
