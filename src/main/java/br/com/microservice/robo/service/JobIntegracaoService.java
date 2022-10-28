@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
 import br.com.microservice.robo.service.transacional.cadastro.CadastroLogTransacionalService;
+import br.com.microservice.robo.service.transacional.kafka.consumer.IRecebimentoLogTransacionalParaKafkaService;
 import br.com.microservice.robo.service.transacional.kafka.producer.EnvioLogTransacionalParaKafkaService;
+import br.com.microservice.robo.service.transacional.kafka.producer.IEnvioLogTransacionalParaKafkaService;
 
 @Component
 public class JobIntegracaoService implements IJobIntegracaoService {
@@ -17,15 +19,18 @@ public class JobIntegracaoService implements IJobIntegracaoService {
 	
 
 	@Autowired
-	EnvioLogTransacionalParaKafkaService logTransacionalService;
+	IEnvioLogTransacionalParaKafkaService logTransacionalService;
 
 	@Autowired
 	CadastroLogTransacionalService cadastraLogTransacionalService;
 
+	
 	@Scheduled(cron = "* * * ? * *")
 	public void executaJob() {
 		List<LogTransacionalDto> list = cadastraLogTransacionalService.cadastro();
 		//logTransacionalService.enviaLogs(list);
+		
+		
 		System.out.println("entrou no job");
 	}
 
