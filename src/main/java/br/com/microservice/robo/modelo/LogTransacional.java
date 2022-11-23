@@ -1,4 +1,4 @@
-package br.com.microservice.robo.model;
+package br.com.microservice.robo.modelo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

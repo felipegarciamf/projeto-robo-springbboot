@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import br.com.microservice.robo.dto.LogTransacionalDto;
 import br.com.microservice.robo.form.LogTransacionalForm;
-import br.com.microservice.robo.model.LogTransacional;
-import br.com.microservice.robo.repository.LogTransacionalRepository;
+import br.com.microservice.robo.modelo.LogTransacional;
+import br.com.microservice.robo.repository.ILogTransacionalRepository;
 
 
 @Service
@@ -17,7 +17,7 @@ public class CadastroLogTransacionalService implements ICadastroLogTransacionalS
 	private Long valor = 0L;
 
 	@Autowired
-	private LogTransacionalRepository logTransacionalRepository;
+	private ILogTransacionalRepository logTransacionalRepository;
 
 	public List<LogTransacionalDto> cadastro() {
 		LogTransacionalForm logTransacionalForm = new LogTransacionalForm();

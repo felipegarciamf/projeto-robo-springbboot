@@ -3,7 +3,7 @@ package br.com.microservice.robo.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.com.microservice.robo.model.LogTransacional;
+import br.com.microservice.robo.modelo.LogTransacional;
 
 public class LogTransacionalDto {
 

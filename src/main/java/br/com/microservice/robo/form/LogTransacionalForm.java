@@ -1,6 +1,6 @@
 package br.com.microservice.robo.form;
 
-import br.com.microservice.robo.model.LogTransacional;
+import br.com.microservice.robo.modelo.LogTransacional;
 
 public class LogTransacionalForm {
 
