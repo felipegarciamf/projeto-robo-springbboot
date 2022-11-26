@@ -8,9 +8,9 @@ import javax.persistence.Id;
 @Entity
 public class TipoLog {
 
-	
-	
-	
+	public TipoLog() {
+	}
+
 	public TipoLog(String nome) {
 		this.nome = nome;
 	}
@@ -20,6 +20,7 @@ public class TipoLog {
 	private Long id;
 
 	private String nome;
+
 
 	public Long getId() {
 		return id;

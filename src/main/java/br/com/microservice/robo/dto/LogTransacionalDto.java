@@ -12,6 +12,7 @@ public class LogTransacionalDto {
 		this.id = logTransacional.getId();
 		this.nome = logTransacional.getNome();
 		this.transacao = logTransacional.getTransacao();
+		this.tipoLog = new TipoLogDto(logTransacional.getTipoLog());
 	}
 	
 	private Long id;
@@ -19,8 +20,16 @@ public class LogTransacionalDto {
 	private String nome;
 
 	private String transacao;
+	
+	private TipoLogDto tipoLog;
+	
+	
 
 	
+
+	public TipoLogDto getTipoLog() {
+		return tipoLog;
+	}
 
 	public Long getId() {
 		return id;

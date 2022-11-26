@@ -15,9 +15,10 @@ public class LogTransacional {
 	public LogTransacional() {
 	}
 
-	public LogTransacional(String nome, String transacao) {
+	public LogTransacional(String nome, String transacao, TipoLog tipoLog) {
 		this.nome = nome;
 		this.transacao = transacao;
+		this.tipoLog = tipoLog;
 	}
 
 	@Id
