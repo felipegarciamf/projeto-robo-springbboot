@@ -11,8 +11,10 @@ import br.com.microservice.robo.dto.LogTransacionalDto;
 @Service
 public class RecebimentoLogTransacionalParaKafkaService implements IRecebimentoLogTransacionalParaKafkaService {
 
+	
+	
 	@Override
-	@KafkaListener(topics = "logTransacionalExample")
+	//@KafkaListener(topics = "logTransacionalExample")
 	public void consome(@Payload LogTransacionalDto valor, Acknowledgment ack) {
 
 		System.out.println(valor.getNome());

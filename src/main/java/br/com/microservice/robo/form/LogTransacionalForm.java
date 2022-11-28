@@ -1,12 +1,14 @@
 package br.com.microservice.robo.form;
 
-import br.com.microservice.robo.model.LogTransacional;
+import br.com.microservice.robo.modelo.LogTransacional;
 
 public class LogTransacionalForm {
 
 	private String nome;
 
 	private String transacao;
+	
+	private TipoLogForm tipoLog;
 
 	public String getNome() {
 		return nome;
@@ -23,8 +25,14 @@ public class LogTransacionalForm {
 	public void setTransacao(String transacao) {
 		this.transacao = transacao;
 	}
+	
+	public void setTipoLog(TipoLogForm tipoLogForm) {
+		this.tipoLog = tipoLogForm;		
+	}
 
 	public LogTransacional converter() {
-		return new LogTransacional(nome, transacao);
+		return new LogTransacional(nome, transacao, tipoLog.converter());
 	}
+
+	
 }
